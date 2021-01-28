@@ -1,0 +1,25 @@
+﻿@model Genoma.Models.Candidate
+
+@{
+    ViewBag.Title = "Candidate";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="col-12 dl-horizontal">
+        <dt>
+            professional Head
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.person.professionalHeadline)
+        </dd>
+        <dd>
+            <button class="col-4 alert-warning"> @Html.ActionLink("Edit", "Edit", new { id = Model.CandidateId }) </button>
+        </dd>
+    </dl>
+</div>
+
