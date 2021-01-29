@@ -4,22 +4,129 @@
     ViewBag.Title = "Candidate";
 }
 
-<h2>Details</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<div>
-    <h4></h4>
-    <hr />
-    <dl class="col-12 dl-horizontal">
-        <dt>
-            professional Head
-        </dt>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <dd>
-            @Html.DisplayFor(model => model.person.professionalHeadline)
-        </dd>
-        <dd>
-            <button class="col-4 alert-warning"> @Html.ActionLink("Edit", "Edit", new { id = Model.CandidateId }) </button>
-        </dd>
-    </dl>
-</div>
+    <title>Medilab Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body class="services" style="background-color:black">
+
+    <h2  style="color:burlywood">Candidate Genome</h2>
+
+    <!-- ======= Genome Section ======= -->
+    <section id="services" style="background-color:black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 ">
+                    <img class="img-circle ri-align-center" width="100" height="100" src="@Html.DisplayFor(model => model.person.picture)" />
+                </div>
+                <div class="col-lg-2 ">
+                    <p></p>
+                    @foreach (var item in Model.person.links)
+                    {
+                        <a style="color:aqua" href="@Html.DisplayFor(modelitem => item.address)"> @Html.DisplayFor(modelitem => item.name) </a>
+                    }
+                </div>
+                <div class="col-lg-8  d-flex">
+
+                    <H3 style="color:aqua">@Html.DisplayFor(model => model.person.name) </H3>
+                    <H4 style="color:aqua">@Html.DisplayFor(model => model.person.professionalHeadline) </H4>
+                    <p style="color:aqua">@Html.DisplayFor(model => model.person.location.name) - @Html.DisplayFor(model => model.person.location.country) </p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="icon-box">
+                        <div class="icon"><i class="icofont-heart-beat"></i></div>
+                        <h3><a style="color:burlywood">Personality Trails</a></h3>
+                        @foreach (var item in Model.personalityTraitsResults.analyses)
+                        {
+                            var ancho = item.analysis * 10;
+                            <p style="color:aqua"> @Html.DisplayFor(modelitem => item.groupId) </p>
+                        }
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                    <div class="icon-box">
+                        <div class="icon"><i class="icofont-drug"></i></div>
+                        <h3><a style="color:burlywood">Languages</a></h3>
+                        @foreach (var item in Model.languages)
+                        {
+                            <p style="color:aqua"> @Html.DisplayFor(modelitem => item.language) - Fluency @Html.DisplayFor(modelitem => item.fluency) </p>
+                        }
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                    <div class="icon-box">
+                        <div class="icon"><i class="icofont-dna-alt-2"></i></div>
+                        <h3><a style="color:burlywood">Educations</a></h3>
+                        @foreach (var item in Model.education)
+                        {
+                            if (item.fromMonth != null)
+                            {
+                                <p style="color:aqua"> @Html.DisplayFor(modelitem => item.name) - From @Html.DisplayFor(modelitem => item.fromMonth) @Html.DisplayFor(modelitem => item.fromYear) To @Html.DisplayFor(modelitem => item.toMonth)  @Html.DisplayFor(modelitem => item.toYear)</p>
+                            }
+                            else
+                            {
+                                <p style="color:aqua"> @Html.DisplayFor(modelitem => item.name) </p>
+                            }
+
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Genome Section -->
+    <div>
+        <h4></h4>
+        <hr />
+        <dl class="col-12 dl-horizontal">
+            <dd>
+                <button class="col-4 alert-warning"> @Html.ActionLink("Edit", "Edit", new { id = Model.CandidateId }) </button>
+            </dd>
+        </dl>
+    </div>
+
+</body>
+
+</html>
