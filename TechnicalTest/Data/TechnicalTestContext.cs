@@ -26,5 +26,9 @@ namespace TechnicalTest.Data
         public System.Data.Entity.DbSet<Genoma.Models.PersonalityTraitsResults> PersonalityTraitsResults { get; set; }
 
         public System.Data.Entity.DbSet<Genoma.Models.Candidate> Candidates { get; set; }
+
+        public System.Data.Entity.DbSet<Job.Models.Advertisement> Advertisements { get; set; }
+
+        public System.Data.Entity.DbSet<Job.Models.PrefilledStatus> PrefilledStatus { get; set; }
     }
 }

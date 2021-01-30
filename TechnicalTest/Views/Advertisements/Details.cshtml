@@ -1,0 +1,171 @@
+﻿@model Job.Models.Advertisement
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:burlywood">Advertisements Details</h2>
+<img class="img-circle ri-align-center" width="50" height="50" src="@Html.DisplayFor(model => model.organizations[0].picture)" />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.prefilledStatus.status) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.prefilledStatus.status)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.boardVersion) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.boardVersion)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.locale) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.locale)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.objective) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.objective)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.review) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.review)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.deadline) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.deadline)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.slug) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.slug)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.completion) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.completion)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.created) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.created)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.crawled) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.crawled)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.opportunity) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.opportunity)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.active) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.active)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.stableOn) :
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:aqua">
+                @Html.DisplayFor(model => model.stableOn)
+            </p>
+        </dd>
+
+    </dl>
+</div>
+<p>
+<p style="color:aqua"> <a class="btn alert-warning" href="~/Advertisements/Index">Back &raquo;</a></p>
+</p>

@@ -7,74 +7,79 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Genoma.Models;
-using TechnicalTest.Data;
+using Job.Models;
 using Newtonsoft.Json;
 
-namespace TechnicalTest.Controllers
+namespace TechnicalTest.Data
 {
-    public class CandidatesController : Controller
+    public class AdvertisementsController : Controller
     {
         private TechnicalTestContext db = new TechnicalTestContext();
 
-        // GET: Candidates/Details/5
+        // GET: Advertisements
+        public ActionResult Index()
+        {
+            var id = "qdPXJ8db";
+
+            var url = "https://torre.co/api/opportunities/" + id;
+
+            Advertisement advertisement = null;
+            return View(advertisement);
+        }
+
+        // GET: Advertisements/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
-                id = "giganteg";
-             //   return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                id = "qdPXJ8db";
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var url = "https://torre.bio/api/bios/" + id;
 
-            Candidate candidate = _download_serialized_json_data<Candidate>(url);
+            var url = "https://torre.co/api/opportunities/" + id;
 
-          
-            if (candidate == null)
+            Advertisement advertisement = _download_serialized_json_data<Advertisement>(url);
+            if (advertisement == null)
             {
                 return HttpNotFound();
             }
-            return View(candidate);
-
+            return View(advertisement);
         }
 
-        // GET: Candidates/Edit/5
-        public ActionResult Edit(string id)
+
+        // GET: Advertisements/Edit/5
+        public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Candidate candidate = Candidates(id);
-            if (candidate == null)
+            Advertisement advertisement = await db.Advertisements.FindAsync(id);
+            if (advertisement == null)
             {
                 return HttpNotFound();
             }
-            return View(candidate);
+            ViewBag.status = new SelectList(db.PrefilledStatus, "status", "status", advertisement.status);
+            return View(advertisement);
         }
 
-        private Candidate Candidates(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        // POST: Candidates/Edit/5
+        // POST: Advertisements/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CandidateId")] Candidate candidate)
+        public async Task<ActionResult> Edit([Bind(Include = "id,boardVersion,locale,objective,review,deadline,slug,completion,created,crawled,opportunity,active,stableOn,openGraph,status")] Advertisement advertisement)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(candidate).State = EntityState.Modified;
-                db.SaveChangesAsync();
+                db.Entry(advertisement).State = EntityState.Modified;
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(candidate);
+            ViewBag.status = new SelectList(db.PrefilledStatus, "status", "status", advertisement.status);
+            return View(advertisement);
         }
 
-             
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -83,8 +88,6 @@ namespace TechnicalTest.Controllers
             }
             base.Dispose(disposing);
         }
-
-
         private static T _download_serialized_json_data<T>(string url) where T : new()
         {
             using (var w = new WebClient())
