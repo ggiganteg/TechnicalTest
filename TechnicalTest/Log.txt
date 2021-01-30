@@ -1,0 +1,14 @@
+28/01/2021
+08:00 check the scope.
+08:30 Structure the proyect
+10:00 Make the MVC model
+12:00 Load and deserialize the Json
+
+29/01/2021
+09:00 Start front-end design
+10:00 Make presentation model
+11:00 Start grafic design
+15:00 Linked with Advertisement list
+
+30/01/2020
+09:00 Start front-end design Advertisement list
