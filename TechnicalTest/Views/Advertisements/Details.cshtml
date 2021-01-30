@@ -5,167 +5,186 @@
 }
 
 <h2 style="color:burlywood">Advertisements Details</h2>
+<style>
+
+    div {
+        transition: .4s ease-out;
+    }
+
+        div:hover {
+            box-shadow: 0 1px 20px rgba(0,0,0,.9);
+            transform: translate3d(0,-3px,0);
+        }
+</style>
+
 <img class="img-circle ri-align-center" width="50" height="50" src="@Html.DisplayFor(model => model.organizations[0].picture)" />
-<div>
-    <dl class="dl-horizontal">
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.prefilledStatus.status) :
-            </p>
-        </dt>
+<p></p>
+<div class="col-lg-12 d-flex">
+    <div class="row">
+        <div class="col-lg-6 d-flex" onmouseover="this.style.backgroundColor='#303030'" onMouseOut="this.style.backgroundColor='#000000'">
+            <dl class="dl-horizontal">
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.prefilledStatus.status) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.prefilledStatus.status)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.prefilledStatus.status)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.boardVersion) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.boardVersion) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.boardVersion)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.boardVersion)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.locale) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.locale) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.locale)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.locale)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.objective) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.objective) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.objective)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.objective)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.review) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.review) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.review)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.review)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.deadline) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.deadline) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.deadline)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.deadline)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.slug) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.slug) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.slug)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.slug)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.completion) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.completion) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.completion)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.completion)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.created) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.created) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.created)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.created)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.crawled) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.crawled) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.crawled)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.crawled)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.opportunity) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.opportunity) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.opportunity)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.opportunity)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.active) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.active) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.active)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.active)
+                    </p>
+                </dd>
 
-        <dt>
-            <p style="color:burlywood">
-                @Html.DisplayNameFor(model => model.stableOn) :
-            </p>
-        </dt>
+                <dt>
+                    <p style="color:burlywood">
+                        @Html.DisplayNameFor(model => model.stableOn) :
+                    </p>
+                </dt>
 
-        <dd>
-            <p style="color:aqua">
-                @Html.DisplayFor(model => model.stableOn)
-            </p>
-        </dd>
+                <dd>
+                    <p style="color:aqua">
+                        @Html.DisplayFor(model => model.stableOn)
+                    </p>
+                </dd>
 
-    </dl>
-</div>
-<p>
-<p style="color:aqua"> <a class="btn alert-warning" href="~/Advertisements/Index">Back &raquo;</a></p>
-</p>
+            </dl>
+        </div>
+        </div>
+        </div>
+    <div class="col-lg-12 d-flex">
+        <p>
+        <p style="color:aqua"> <a class="btn alert-warning" href="~/Advertisements/Index">&laquo; Back </a></p>
+        </p>
+    </div>

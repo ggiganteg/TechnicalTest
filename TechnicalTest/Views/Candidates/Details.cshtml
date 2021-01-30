@@ -37,6 +37,18 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+
+        div {
+            transition: .4s ease-out;
+        }
+
+            div:hover {
+                box-shadow: 0 1px 20px rgba(0,0,0,.9);
+                transform: translate3d(0,-3px,0);
+            }
+
+    </style>
 </head>
 
 <body class="services" style="background-color:black">
@@ -47,30 +59,39 @@
     <section id="services" style="background-color:black">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2 ">
-                    <img class="img-circle ri-align-center" width="100" height="100" src="@Html.DisplayFor(model => model.person.picture)" />
-                </div>
-                <div class="col-lg-2 ">
-                    <p></p>
-                    @foreach (var item in Model.person.links)
-                    {
-                        <a style="color:aqua" href="@Html.DisplayFor(modelitem => item.address)"> @Html.DisplayFor(modelitem => item.name) </a>
-                    }
-                </div>
-                <div class="col-lg-8  d-flex">
 
-                    <H3 style="color:aqua">@Html.DisplayFor(model => model.person.name) </H3>
-                    <H4 style="color:aqua">@Html.DisplayFor(model => model.person.professionalHeadline) </H4>
-                    <p style="color:aqua">@Html.DisplayFor(model => model.person.location.name) - @Html.DisplayFor(model => model.person.location.country) </p>
-                    <p></p>
+                <div class="col-lg-2" onmouseover="this.style.backgroundColor='#303030'" onMouseOut="this.style.backgroundColor='#000000'">
+                    <div class="icon-box">
+                        <img class="img-circle ri-align-center" width="100" height="100" src="@Html.DisplayFor(model => model.person.picture)" />
+                    </div>
+                </div>
+
+                <div class="col-lg-2 " onmouseover="this.style.backgroundColor='#303030'" onMouseOut="this.style.backgroundColor='#000000'">
+                    <div class="icon-box">
+                        <p></p>
+                        @foreach (var item in Model.person.links)
+                        {
+                            <a style="color:aqua" href="@Html.DisplayFor(modelitem => item.address)"> @Html.DisplayFor(modelitem => item.name) </a>
+                        }
+                    </div>
+                </div>
+
+                <div class="col-lg-8 d-flex" onmouseover="this.style.backgroundColor='#303030'" onMouseOut="this.style.backgroundColor='#000000'">
+                    <div class="icon-box">
+
+                        <H3 style="color:aqua">@Html.DisplayFor(model => model.person.name) </H3>
+                        <H4 style="color:aqua">@Html.DisplayFor(model => model.person.professionalHeadline) </H4>
+                        <p style="color:aqua">@Html.DisplayFor(model => model.person.location.name) - @Html.DisplayFor(model => model.person.location.country) </p>
+                        <p></p>
+                    </div>
                 </div>
             </div>
-        </div>
+            </div>
 
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" onmouseover="this.style.backgroundColor='#303030'" onMouseOut="this.style.backgroundColor='#000000'">
                     <div class="icon-box">
                         <div class="icon"><i class="icofont-heart-beat"></i></div>
                         <h3><a style="color:burlywood">Personality Trails</a></h3>
@@ -82,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" onmouseover="this.style.backgroundColor='#303030'" onMouseOut="this.style.backgroundColor='#000000'">
                     <div class="icon-box">
                         <div class="icon"><i class="icofont-drug"></i></div>
                         <h3><a style="color:burlywood">Languages</a></h3>
@@ -93,7 +114,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" onmouseover="this.style.backgroundColor='#303030'" onMouseOut="this.style.backgroundColor='#000000'">
                     <div class="icon-box">
                         <div class="icon"><i class="icofont-dna-alt-2"></i></div>
                         <h3><a style="color:burlywood">Educations</a></h3>
@@ -117,7 +138,7 @@
 
         </div>
     </section><!-- End Genome Section -->
-    <div>
+    <div class="col-lg-12 d-flex">
         <h4></h4>
         <hr />
             <p>

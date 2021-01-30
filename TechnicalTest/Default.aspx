@@ -11,13 +11,13 @@
     </div>
 
     <div class="row" style="background-color:black">
-        <div class="col-md-4" style="background-color:black">
+        <div class="col-md-6" style="background-color:black">
             <h2 style="color:burlywood">Candidate</h2>
             <p style="color:aqua">
                 Gonzalo Gigante.
             </p>
             <p>
-                <a class="btn alert-warning" href="Candidates/Details">Genome &raquo;</a>
+                <a class="btn alert-warning" href="Candidates/Details">My Genome &raquo;</a>
             </p>
         </div>
        </div>

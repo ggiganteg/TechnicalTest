@@ -1,63 +1,84 @@
 ﻿@model IEnumerable<Job.Models.Advertisement>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Advertisements List";
 }
 
 <h2 style="color:burlywood">Advertisements List</h2>
 
-<table class="table">
-    <tr>
-        <th>
+<style>
 
-        </th>
-        <th>
-            <h3 style="color:burlywood">Company</h3>
-        </th>
-        <th>
-            <h3 style="color:burlywood">Objetive</h3>
-        </th>
-        <th>
-            <h3 style="color:burlywood">Detail</h3>
-        </th>
-    </tr>
-
-    @for (int i = 1; i < 10; i++)
-    {
-        if (i == 1)
-        {
-            <tr>
-                <td>
-                    <img class="img-circle ri-align-center" width="50" height="50" src="https://torre-media.s3-us-west-2.amazonaws.com/One+Firefly.jpg" />
-                </td>
-                <td>
-                    <p style="color:aqua">On Firefly</p>
-                </td>
-                <td>
-                    <p style="color:aqua">Accounting Assistant</p>
-                </td>
-                <td>
-                    <p style="color:aqua"> <a class="btn alert-warning" href="~/Advertisements/Details">Details &raquo;</a></p>
-                </td>
-            </tr>
-
-        }
-        else
-        {
-        <tr>
-            <td>
-            </td>
-            <td>
-                <p style="color:aqua">Company</p>
-            </td>
-            <td>
-                <p style="color:aqua">Objetive</p>
-            </td>
-            <td>
-                <p style="color:aqua"><a class="btn alert-warning" href="">Details &raquo;</a></p>
-            </td>
-        </tr>
-        }
+    tr {
+        transition: .4s ease-out;
     }
 
-</table>
+        tr:hover {
+            box-shadow: 0 1px 20px rgba(0,0,0,.9);
+            transform: translate3d(0,-3px,0);
+        }
+</style>
+
+<div class="row d-flex">
+    <div class="col-lg-12 d-flex">
+
+        <table class="table">
+            <tr>
+                <th>
+
+                </th>
+                <th>
+                    <h3 style="color:burlywood">Company</h3>
+                </th>
+                <th>
+                    <h3 style="color:burlywood">Objetive</h3>
+                </th>
+                <th>
+                    <h3 style="color:burlywood">Detail</h3>
+                </th>
+            </tr>
+
+            @for (int i = 1; i < 4; i++)
+            {
+                if (i == 1)
+                {
+                    <tr  class="d-flex" onmouseover="this.style.backgroundColor='#303030'" onMouseOut="this.style.backgroundColor='#000000'">
+                        <td>
+                            <img class="img-circle ri-align-center" width="50" height="50" src="https://torre-media.s3-us-west-2.amazonaws.com/One+Firefly.jpg" />
+                        </td>
+                        <td>
+                            <p style="color:aqua">On Firefly</p>
+                        </td>
+                        <td>
+                            <p style="color:aqua">Accounting Assistant</p>
+                        </td>
+                        <td>
+                            <p style="color:aqua"> <a class="btn alert-warning" href="~/Advertisements/Details">Details &raquo;</a></p>
+                        </td>
+                    </tr>
+
+                }
+                else
+                {
+                    <tr  class="d-flex" onmouseover="this.style.backgroundColor='#303030'" onMouseOut="this.style.backgroundColor='#000000'">
+                        <td>
+                        </td>
+                        <td>
+                            <p style="color:aqua">Company</p>
+                        </td>
+                        <td>
+                            <p style="color:aqua">Objetive</p>
+                        </td>
+                        <td>
+                            <p style="color:aqua"><a class="btn alert-warning" href="">Details &raquo;</a></p>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
+<div class="col-lg-12">
+    <p>
+    <p style="color:aqua"> <a class="btn alert-warning" href="../Candidates/Details">&laquo; Back</a></p>
+    </p>
+</div>
